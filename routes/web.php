@@ -18,5 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [UserController::class, 'index']);
+// Route::get('/', [UserController::class, 'index']); ctrl+/
+
+Route::resource('/user', UserController::class);
+
 Route::get('/about', [UserController::class, 'about']);
