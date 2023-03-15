@@ -13,9 +13,9 @@
 
 <body>
     {{--  sebagai template yang akan dipakai semua halaman  --}}
+    @include('layouts.navbar')
     <div class="container">
 
-        @include('layouts.navbar')
 
         @yield('content')
 

@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [UserController::class, 'index']); ctrl+/
 
+Route::get('/', function () {
+    return redirect('/user');
+});
+
 Route::resource('/user', UserController::class);
 
 Route::get('/about', [UserController::class, 'about']);
