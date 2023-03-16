@@ -13,6 +13,7 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
+                <th scope="col">Role</th>
                 <th scope="col">Email</th>
                 <th scope="col">Action</th>
             </tr>
@@ -22,6 +23,7 @@
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
+                    <td>{{ $user->role->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td class="d-flex justify-content-start gap-3">
                         <a href="{{ url('user/' . $user->id) }}" class="btn btn-info">Read</a>
