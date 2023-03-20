@@ -16,6 +16,15 @@
                     <input type="email" class="form-control" name="email" value="{{ $user->email }}">
                 </div>
                 <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Role</label>
+                    <select class="form-select" aria-label="Default select example" name="role_id">
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->id }}" {{ $role->id == $user->role_id ? 'selected' : '' }}>
+                                {{ $role->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" name="password" value="{{ $user->password }}">
                 </div>

@@ -8,7 +8,8 @@
                 <img src="https://loremflickr.com/200/200" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $user->name }}</h5>
-                    <p class="card-text">Id: <b>{{ $user->id }}</b><br>Email: <b>{{ $user->email }}</b></p>
+                    <p class="card-text">Id: <b>{{ $user->id }}</b><br>Email:
+                        <b>{{ $user->email }}</b><br>{{ $user->role->name }}</p>
                 </div>
             </div>
             <a href="{{ url('/user') }}" class="btn btn-primary my-2 d-block">Back</a>

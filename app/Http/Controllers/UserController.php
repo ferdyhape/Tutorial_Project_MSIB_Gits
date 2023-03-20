@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -32,7 +33,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('create', [
+            'roles' => Role::all(),
+        ]);
     }
 
     /**
@@ -47,6 +50,7 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:75',
             'email' => 'required|email:dns|unique:users',
+            'role_id' => 'required|integer|exists:roles,id',
             'password' => 'required|min:5|max:255',
         ]);
 
@@ -82,6 +86,7 @@ class UserController extends Controller
     {
         return view('edit', [
             'user' => $user,
+            'roles' => Role::all(),
         ]);
     }
 
@@ -97,6 +102,7 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:75',
             'email' => 'required|email:dns',
+            'role_id' => 'required|integer|exists:roles,id',
             'password' => 'required|min:5|max:255',
         ]);
 
