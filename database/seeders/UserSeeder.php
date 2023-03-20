@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Ferdy Hahan Pradana',
             'email' => 'ferdyhahan5@gmail.com',
+            'role_id' => 1,
             'password' => bcrypt('password'),
         ]);
 
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->email,
+                'role_id' => 2,
                 'password' => bcrypt('password'),
             ]);
         }
